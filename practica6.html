@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinepolis</title>
+</head>
+<body> 
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+		#creed-img {	     
+            float: left;
+			margin-right: 20px; 
+		}
+	</style>
+    <div style="background-color: rgb(0, 0, 0);" align="left">
+        <a href="practica6.html"><img src="cine.png" width="20%"></a>
+    </div>
+    <form action="" method="post" enctype="text/plain">
+        <fieldset>
+            <legend>Venta de Boletos</legend>
+            <table align="left">
+                <tr>
+                    <td width="40%">
+                        <label for="Sucursal">Sucursal</label></br>
+                            <select id="Sucursal" >
+                                <option value="" disabled selected>selecciona un cine</option>
+                                <option value="Cinem">Cinepolis Macroplaza</option>
+                                <option value="Cined">Cinepolis El dorado</option>
+                                <option value="Cines">Cinepolis Sendero</option>
+                                <option value="Cinet">Cinepolis Tangamanga</option> 
+                                <option value="Cinec">Cinepolis Citadina</option>  
+                                <option value="Cinep">Cinepolis plaza san luis</option> 
+                                <option value="Cinevip">Cinepolis el dorado VIP</option> 
+                            </select>
+                    </td>
+                    
+                </tr>            
+                <tr>
+                    <td width="40%">
+                        <label for="idioma">Idioma de preferencia</label></br>
+                        <input type="radio" name="idioma" id="idioma">
+                        <label for="spanish">Español</label><br>
+                        <input type="radio" name="idioma" id="idioma">
+                        <label for="idioma">Ingles</label><br>
+                    </td>
+                <tr>
+                    <td>
+                        <label for="Horario">Horario</label><br>
+                         <input type="datetime-local" name="fechaes" id="fechaes">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h3>Tipo de proyeccion</h3>
+        
+                        <h5>Experiencia</h5>
+                        <input type="checkbox" name="casilla" id="casilla" checked>
+                        <label for="">Cinepolis</label><br>
+                            
+                        <input type="checkbox" name="casilla2" id="casilla2" checked>
+                        <label for="">4DX</label><br>
+                        
+                        <input type="checkbox" name="casilla3" id="casilla3" checked>
+                        <label for="">VIP</label><br>
+                        <h5>Formato </h5>
+                        <input type="checkbox" name="casilla4" id="casilla4" checked>
+                        <label for="">2D</label><br>
+                        
+                        <input type="checkbox" name="casilla5" id="casilla5" checked>
+                        <label for="">3D</label><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="cantidad">Cantidad De boletos</label><br/>
+                      <input type="number" name="cantidad" id="cantidad"/><br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="col">Color de los boletos</label><br>
+                        <input type="color" id="col" name="col">
+                    </td>
+                </tr>
+            </table>
+            <div align="left" width="20%">
+            
+                <img  id="creed-img"src="creed.jpg" width="20%">
+                <h2>CREED III</h2>   
+                <h4>Sipnosis</h4>
+                <p>Creed III es una próxima película de drama deportivo estadounidense dirigida por Michael B. Jordan (en su debut como director) a partir de un guion de Keenan Coogler y Zach Baylin.</p>
+                <label for="califica">Califica la pelicula</label><br/>
+                <input type="range" name="califica" id="califica" min="1" max="10" value="0"/><br/>
+                <label for="comenta">Reseña propia</label></br></br>
+                <textarea name="comenta" id="comenta" ></textarea></br></br>
+                <label for="correo">para mas informacion dejanos tu correo</label><br>
+                <input type="email" id="correo" name="correo" placeholder="example@.asda.com">
+        </div>
+        </fieldset>
+        <fieldset>
+            <legend>Proceso de pago</legend>
+            <table >
+                <tr>
+                    <td width="50%">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Nombre">
+                        <br><br>
+                        <label for="pellidop">Apellido P.</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Apellido paterno">
+                        <br><br>
+                        <label for="nombre">Apellido M.</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Apellido Materno">
+
+                    </td>
+
+                    <td width="50%"> 
+                        <h3>Tarjeta de credito</h3>
+
+                        <h4>tipo de Pago</h4>
+                        <input type="checkbox" name="casilla" id="casilla" >
+                        <label for="">MasterCard</label><br>
+                            
+                        <input type="checkbox" name="casilla2" id="casilla2" >
+                        <label for="">VISA</label><br>
+                        
+                        <input type="checkbox" name="casilla3" id="casilla3" >
+                        <label for="">AMEX</label><br><br>
+                    
+                        <label for="contra">Numeros de la tarjeta</label></br>
+                        <input type="password" name="contra" id="contra" placeholder="1234-1233-1234-1234" required>
+                        
+                    </td>
+                    <td width="50%">
+                        <label for="">Fecha de nacimiento</label>
+                         <input type="date" name="fecha" id="fecha"></br></br>
+                        <label for="pagina">Direccion url del RFC:</label><br/>
+                        <input type="url" name="pagina" id="pagina"/><br/><br>
+                        <label for="" >Foto de la Ine</label><br>
+                        <input type="file"><br><br>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+       
+    </form>
+
+</body>
+</html>
