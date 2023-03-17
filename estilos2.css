@@ -1,0 +1,51 @@
+#uno{
+    background-color: rgb(202, 226, 202);
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+#refe{
+    color: darkgreen; 
+    font-style: italic;
+}
+p#uno{
+    color: rgb(15, 0, 148);
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+h2{
+    color: blue;
+    font-size: 40px;
+    background-color: rgb(202, 226, 202);
+}
+a{
+    color: rgb(180, 104, 231);
+    font-size: 30px;
+}
+#colo{
+    color: rgb(180, 104, 231);  
+}
+#dos{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(202, 226, 202);
+    font-size: 30px;
+}
+p#dos{
+    
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h4{
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style:italic;
+}
+cite{
+    font-family: Arial, Helvetica, sans-serif;
+    
+    font-size: 20px;
+}
+body{
+    background-color: rgb(221, 187, 221);
+}
