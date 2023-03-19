@@ -1,0 +1,9 @@
+body{
+    background-color:grey;
+}
+legend,h2,h3,label,h5{
+    color: azure;
+}
+h1{
+    color: rgb(206, 206, 206);
+}
