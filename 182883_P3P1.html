@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Operaciones matematicas</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="Width=device=width">
+    </head>
+    <script>
+        function suma(){
+        var num1=prompt("Escribe un numero:","")
+        var num2=prompt("Escribe un segundo numero:","")
+        num3=parseInt (num1)+ parseInt (num2);
+        alert("El resultado de la suma es: "+num3)
+        if(num3>100)
+        alert("El resultado de la suma es mayor de 100: "+num3)
+        }
+        function resta(){
+        var num1=prompt("Escribe un numero:","")
+        var num2=prompt("Escribe un segundo numero:","")
+        num3=parseInt (num1)- parseInt (num2);
+        alert("El resultado de la resta es: "+num3)
+        }
+        function multiplicar(){
+        var num1=prompt("Escribe un numero:","")
+        var num2=prompt("Escribe un segundo numero:","")
+        num3=parseInt (num1)* parseInt (num2);
+        alert("El resultado del producto es: "+num3)
+        }
+        function dividir(){
+        var num1=prompt("Escribe un numero:","")
+        var num2=prompt("Escribe un segundo numero:","")
+        num3=parseInt (num1)/ parseInt (num2);
+        alert("El resultado de la division es: "+num3)
+        }
+        function positivo_negativo(){
+            var num1=prompt("Escribe un numero:","")
+            if(parseInt(num1)>=0)
+                alert("Es positivo")
+            else
+                alert("Es negativo")
+        }
+    </script>
+    <style>
+        body{
+            background-color: rgb(137, 132, 141);
+        }
+        .contenedor{
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            border: none;
+            width: 600px;
+            height: 80px;
+            margin: 60px;
+            background-color: rgb(77, 77, 255);
+            margin-left: 30%;
+            
+        }
+    </style>
+    <body>
+        <div>
+        <input class="contenedor" type="button" name="Sumar" value="Sumar" onclick="suma()"/>
+        <input class="contenedor"type="button" name="Restar" value="Restar" onclick="resta()"/>
+        <input class="contenedor"type="button" name="producto" value="Multiplicar" onclick="multiplicar()"/>
+        <input class="contenedor"type="button" name="cociente" value="Dividir" onclick="dividir()"/>
+        <input class="contenedor"type="button" name="signo" value="¿Positivio o negativo?" onclick="positivo_negativo()"/>
+        </div>
+    </body>
+    </head>
+</html>
