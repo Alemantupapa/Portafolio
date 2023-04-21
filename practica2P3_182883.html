@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+    <script src="practica2js.js"></script>
+    <style>
+        .marco{
+            background-color: rgb(89, 89, 117);
+        }
+        .botones{
+            padding: 20px;
+        }
+        button{
+            margin: 20px;
+            background-color: rgb(40, 40, 134);
+            color: rgb(67, 146, 219);
+            width: 100px;
+            height: 30px;
+        }
+        input{
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Operaciones Matematicas</h1>
+    <div class="marco">
+        <form action="" >
+            <h2>Introduce un numero</h2>
+            <input type="text" name="numero1" id="numero1" value="">
+            <h2>Introduce un numero</h2>
+            <input type="text" name="numero2" id="numero2" value="">
+        </form>
+        <div class="botones">
+            <button type="button" onclick="suma()">Sumar</button>
+            <button type="button" onclick="resta()">restar</button>
+            <button type="button" onclick="multi()">multiplicar</button>
+            <button type="button" onclick="divi()">Division</button>
+        </div>
+        
+    </div>
+    <h2 class="texto1">Resultado</h2> <p class="resultado" id="resultado"></p>
+</body>
+</html>
