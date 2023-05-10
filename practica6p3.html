@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Almacenamiento Web</title>
+  <style>
+     body{
+        background-color: rgb(76, 92, 107);
+    }
+    h1{
+        color: rgb(163, 255, 175);
+        margin-left: 450px;
+        font-family: sans-serif;
+    }
+    .columna1{
+        padding-right:300px ;
+    }
+    .columna1 h2{
+        margin-top: 60px;
+        margin-left: 100px;
+        color: rgb(163, 255, 175);
+        font-family: sans-serif;
+    }
+    .columna1 p{
+        color: rgb(159, 241, 255);
+        font-family: sans-serif;
+        margin-left:100px;
+        
+        line-height: 25px;
+    }
+    .columna1 li{
+        color: rgb(252, 176, 132);
+        font-family: sans-serif;
+        margin-left:100px;
+       
+        line-height: 25px;
+        margin-top: 40px;
+    }
+    
+  </style>
+</head>
+
+<body>
+  <h1>API de Almacenamiento Web</h1>
+  <div class="columna1">
+    <h2>Para que sirve?</h2>
+    <p>La API de almacenamiento web es una herramienta que permite a los desarrolladores de páginas web almacenar datos en el navegador del usuario de forma persistente. Esto significa que la información almacenada en el navegador del usuario permanece disponible incluso después de que se cierre la página web.</p>
+    <br><br>
+    <p>La API de almacenamiento web se compone de dos objetos: localStorage y sessionStorage.</p>
+
+    <ul>
+        <li>
+            <span style="color: blue;">localStorage</span> : permite a los desarrolladores almacenar información en el navegador del usuario de forma persistente, lo que significa que los datos permanecen disponibles incluso después de que el usuario cierra y vuelve a abrir el navegador. La información almacenada en localStorage se puede acceder a través de la propiedad "localStorage" del objeto "window". Los datos se almacenan en forma de pares clave-valor y se pueden guardar y recuperar mediante métodos como <span style="color: rgb(255, 62, 62);">"setItem" y "getItem".</span>
+        </li>
+        <li>
+            <span style="color: blue;">sessionStorage</span>: es similar a localStorage, pero la información almacenada en sessionStorage se borra cuando se cierra la ventana o pestaña del navegador. La información almacenada en sessionStorage se puede acceder a través de la propiedad "sessionStorage" del objeto "window".
+        </li>
+    </ul>
+    <h2>Importancia de la API de almacenamiento web</h2>
+    <p>
+        La API de almacenamiento web es importante porque proporciona una forma sencilla y eficaz para que los desarrolladores de páginas web almacenen información en el navegador del usuario de forma persistente. Esto significa que la información se puede guardar en la memoria local del navegador y permanecer disponible incluso después de cerrar y volver a abrir la página web.</p>
+
+        <h2>Ejemplos del uso de la API de almacenamiento web</h2>
+
+        <ul>
+            <li style="color: blanchedalmond;">
+                Recordar las preferencias del usuario: una página web podría utilizar el almacenamiento web para recordar las preferencias del usuario, como su idioma preferido, tamaño de fuente, color de fondo, etc. Esto permitiría a los usuarios personalizar su experiencia en la página web y tener una experiencia más fluida en visitas posteriores.
+            </li>
+            <li style="color: blanchedalmond;">
+                Guardar información de usuario: una página web podría utilizar la API de almacenamiento web para guardar información de usuario, como nombre de usuario, dirección de correo electrónico, etc. Esto permitiría a los usuarios iniciar sesión en la página web de manera más rápida y sencilla.
+            </li>
+            <li style="color: blanchedalmond;">
+                Almacenar datos de carrito de compras: una página web de compras podría utilizar el almacenamiento web para almacenar los artículos en el carrito de compras del usuario. Esto permitiría a los usuarios agregar productos al carrito y continuar navegando en la página web sin perder su selección.
+            </li>
+          </ul>
+          <h2>Ejemplos del uso de la API de almacenamiento web En esta Pagina</h2>
+  </div>
+ 
+
+ 
+  <label for="clave" style="font-family: sans-serif; color: rgb(178, 132, 221); font-weight: bolder; margin-left: 100px;margin-top: 20px;">Clave:</label>
+  <input type="text" id="clave" style="width: 200px; height:20px; background-color:salmon ; margin-left: 100px; margin-top: 20px;">
+  <br>
+  <label for="valor"style="font-family: sans-serif; color: rgb(178, 132, 221); font-weight: bolder; margin-left: 100px ;margin-top: 20px;">Valor:</label>
+  <input type="text" id="valor" style="width: 200px; height:20px; background-color:salmon ; margin-left: 100px;margin-top: 20px;">
+  <br>
+
+  <button onclick="guardar()" style="margin-left: 440px; margin-top: 30px;color: rgb(60, 255, 0); background-color: rgb(2, 2, 2); width: 200px; height: 40px;">Guardar</button>
+  <button onclick="recuperar() "style="color: rgb(60, 255, 0); background-color:  rgb(2, 2, 2); width: 200px;height: 40px;">Recuperar</button>
+  
+  <script>
+    function guardar() {
+      var clave = document.getElementById("clave").value;
+      var valor = document.getElementById("valor").value;
+      localStorage.setItem(clave, valor);
+      alert("Valor almacenado con éxito");
+    }
+
+    function recuperar() {
+      var clave = document.getElementById("clave").value;
+      var valor = localStorage.getItem(clave);
+      if (valor === null) {
+        alert("No se encontró ningún valor para la clave especificada");
+      } else {
+        document.getElementById("valor").value = valor;
+        alert("Valor recuperado con éxito");
+      }
+    }
+  </script>
+</body>
+</html>
