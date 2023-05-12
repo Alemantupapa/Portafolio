@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Obtener totales del formulario</title>
+    <link rel="stylesheet" href="estilos.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="https://fonts.googleapis.com/css?family=Charmonman" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet"> 
+    <link rel="stylesheet" href="act2p3.css">
+    <script type="text/javascript" src="/PDF/jspdf.js"></script>
+    <script type="text/javascript" src="/PDF/jspdf.plugin.addimage.js"></script>
+    <script type="text/javascript" src="/PDF/jspdf.plugin.cell.js"></script>
+    <script type="text/javascript" src="/PDF/jspdf.plugin.from_html.js"></script>
+    <script type="text/javascript" src="/PDF/jspdf.plugin.ie_below_9_shim.js"></script>
+    <script type="text/javascript" src="/PDF/jspdf.plugin.javascript.js"></script>
+    <script type="text/javascript" src="/PDF/jspdf.plugin.sillysvgrenderer.js"></script>
+    <script type="text/javascript" src="/PDF/jspdf.plugin.split_text_to_size.js"></script>
+    <script type="text/javascript" src="/PDF/jspdf.plugin.standard_fonts_metrics.js"></script>
+    <script>
+        var total;
+        //funcion que sirve para obtener el puntaje de las respuestas correctas
+        function califica()
+            {var total=0;//declaramos la variable total y la igualamos a 0
+                for (var x=1;x<=5;x++)//creamos un ciclo for que se detendra hasta 5 que son la cantidad de preguntas que hay
+                {
+                var res=0;//declaramos la variable res y la igualamos a 0
+                var nom="r"+x;//la variable declarada nom con valor "r" de le concatena lo que valga X para encuentre el name de las preguntas (r1,r2,r3,r4,r5)
+                var resul=document.getElementsByName(nom);
+                for(var i=0;i<resul.length;i++)
+                {
+                    if(resul[i].checked==true)
+                        res=parseInt(resul[i].value);
+                }
+                total=total+res;//se acomulan los puntos
+                document.getElementById("total").innerHTML="Puntos obtenidos: "+total+" Puntos";
+                }
+                if(total==20)//si la cantidad de puntos es igual a 20 se imprime EXCELENTE
+                    document.getElementById("comentario").innerHTML="EXCELENTE!!!";
+                else
+                    if(total==15)//si la cantidad de puntos es igual a 15 se imprime regular
+                    document.getElementById("comentario").innerHTML="Regular!!";
+                else
+                    if(total<=15)//si la cantidad de puntos es igual menor a 15 se imprime Estudia un poco más
+                    document.getElementById("comentario").innerHTML="Estudia un poco más";
+            }
+        //funcion para generar PDF
+         function generar(){
+            var doc= new jsPDF();
+            doc.setFontSize(40);
+            doc.setTextColor(p,7,121);
+            doc.text(40,20, "Encuesta");
+            doc.setTextColor(12,122,209);
+            doc.setFontSize(30);
+            doc.text(50,35,"Es importante tu participacion");
+            doc.setTextColor(0,0,0);
+            doc.setFontSize(20);
+            doc.text(20,50,"20 puntos. Excelente. /r Todas tus respuestas son correctas");
+            doc.text(20,70,"15 puntos. muy bien /r obtuviste 3 preguntas correctas");
+            doc.text(20,90,"10 puntos. regular /r obtuviste 2 preguntas correctas");
+            doc.text(20,110,"0 puntos. /r todas tus respuestas son incorrectas ");
+            var string =doc.output('datauristring');
+            $('iframe').attr('src',string);
+         }
+        </script>
+</head>
+
+
+<body>
+     <div id="contiene" class="cuadro">
+    <h1>Responde la encuesta</h1>
+    <h2>Tu opinión es importante</h2>
+<form>
+        <div class="cuadro2">
+   
+    <ul>
+
+        <li>¿Cuál de las siguientes opciones NO es un elemento HTML válido?</li>
+        <input type="radio" name="r1" id="r1" value="5"/> box <br/>
+        <input type="radio" name="r1" id="r1" value="0"/>span<br/>
+        <input type="radio" name="r1" id="r1" value="0"/>div<br/>
+        <input type="radio" name="r1" id="r1" value="0"/>p<br/>
+       
+        <li>¿Cuál de las siguientes opciones es una propiedad de CSS para establecer el color de fondo de un elemento?</li>
+        <input type="radio" name="r2" id="r2" value="5"/> background-color<br/>
+        <input type="radio" name="r2" id="r2" value="0"/>font-size<br/>
+        <input type="radio" name="r2" id="r2" value="0"/>text-align<br/>
+        <input type="radio" name="r2" id="r2" value="0"/> color<br/>
+
+        <li>¿Cuál de las siguientes opciones NO es un tipo de dato en JavaScript?</li>
+        <input type="radio" name="r3" id="r3" value="5"/>float<br/>
+        <input type="radio" name="r3" id="r3" value="0"/>string<br/>
+        <input type="radio" name="r3" id="r3" value="0"/>number<br/>
+        <input type="radio" name="r3" id="r3" value="0"/>boolean<br/>
+
+        <li>¿Cuál de las siguientes opciones es un método de arreglo en JavaScript que agrega un elemento al final del arreglo?</li>
+        <input type="radio" name="r4" id="r4" value="5"/>push()<br/>
+        <input type="radio" name="r4" id="r4" value="0"/>unshift()<br/>
+        <input type="radio" name="r4" id="r4" value="0"/>shift()<br/>
+        <input type="radio" name="r4" id="r4" value="0"/> pop()<br/>
+        <li>¿Cuál de las siguientes opciones es un evento de JavaScript que se activa cuando el usuario hace clic en un elemento?</li>
+        <input type="radio" name="r5" id="r5" value="5"/>click<br/>
+        <input type="radio" name="r5" id="r5" value="0"/>scroll<br/>
+        <input type="radio" name="r5" id="r5" value="0"/>keypress<br/>
+        <input type="radio" name="r5" id="r5" value="0"/> mouseover<br/>
+    </ul>
+   
+</div>
+<input type="button" value="Calificar" onclick="califica()" class="boton" id="botones" style="width: 300px; height: 20px; font-family: sans-serif; margin-left: 100px; color: rgb(116, 116, 209); background-color: rgb(240, 233, 176); font-weight: bolder;">
+<input type="button" onclick="generar()" value="Generar PDF" class="boton" id="botones" style="width: 300px; height: 20px; font-family: sans-serif; margin-left: 100px; color: rgb(116, 116, 209); background-color: rgb(240, 233, 176); font-weight: bolder;" />
+</form>
+<p></p>
+<p id="total">   </p>
+<p id="comentario">   </p>
+<iframe frameborder="0" width="600" height="500">
+   
+</iframe>
+
+</div>
+</body>
+</html>
