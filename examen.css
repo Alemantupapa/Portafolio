@@ -1,0 +1,51 @@
+h1{
+    font-family: 'Anton';
+    margin-left: 20px;
+}
+.name{
+font-family:'Roboto Mono', monospace;;
+    margin-left: 20px;
+    font-weight: bolder;
+}
+#nombre{
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 500px;
+    height: 35px;
+    background-color: rgb(188, 199, 195); 
+}
+.dia{
+    font-family: 'Lobster', cursive;
+    display: block;
+    margin-top: 50px;
+    margin-left: 20px;
+    font-weight: bolder;
+}
+#cumple{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+button{
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: bolder;
+    color: rgb(0, 0, 0);
+    display: block;
+    margin-top: 30px;
+    margin-left: 30px;
+    width: 500px;
+    height: 40px;
+}
+button:hover{
+    background-color: cadetblue;
+    color: aliceblue;
+}
+#resultado{
+    font-family: 'Teko', sans-serif;
+    font-weight: bolder;
+    margin-left: 30px;
+}
+img{
+    width: 200px;
+    margin-left: 30px;
+    margin-top: 30px;
+}
